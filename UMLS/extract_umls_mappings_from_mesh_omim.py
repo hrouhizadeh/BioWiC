@@ -52,8 +52,8 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--umls_mapping', type=str, default='./umls_files/umls_all_term.json')
-    parser.add_argument('--mesh_output', type=str, default='./umls_files/mesh_map.json')
-    parser.add_argument('--omim_output', type=str, default='./umls_files/omim_map.json')
+    parser.add_argument('--mesh_mapping_path', type=str, default='./umls_files/mesh_map.json')
+    parser.add_argument('--omim_mapping_path', type=str, default='./umls_files/omim_map.json')
 
     args = parser.parse_args()
     main(args)
