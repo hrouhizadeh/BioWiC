@@ -44,8 +44,8 @@ def main(args):
 
     content = load_data(args.umls_mapping)
     mesh_dict, omim_dict = build_code_dicts(content)
-    write_json(mesh_dict, args.mesh_output)
-    write_json(omim_dict, args.omim_output)
+    write_json(mesh_dict, args.mesh_mapping_path)
+    write_json(omim_dict, args.omim_mapping_path)
 
 
 if __name__ == "__main__":
