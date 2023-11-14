@@ -10,7 +10,7 @@ For further details refer to the preprint version of the [BioWiC paper](https://
 
 
 ## Installation
-Follow these instructions to install the necessary dependencies for the project
+Follow these instructions to install the necessary dependencies for the project.
 ```bash
 git clone https://github.com/hrouhizadeh/BioWiC
 cd BioWiC
