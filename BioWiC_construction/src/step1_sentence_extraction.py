@@ -317,10 +317,10 @@ def main():
     parser = argparse.ArgumentParser()
 
     # Define the arguments
-    parser.add_argument('--umls_mappings', type=str, default = './umls_files/umls_all_term.json')
+    parser.add_argument('--umls_mappings', type=str, default = '../UMLS/umls_files/umls_all_term.json')
 
-    parser.add_argument('--omim_file', type=str, default='./umls_files/omim_map.json')
-    parser.add_argument('--mesh_file', type=str, default='./umls_files/mesh_map.json')
+    parser.add_argument('--omim_file', type=str, default='../UMLS/umls_files/omim_map.json')
+    parser.add_argument('--mesh_file', type=str, default='../UMLS/umls_files/mesh_map.json')
     parser.add_argument('--output_dir', type=str, default='./unified_el_resources/')
     parser.add_argument('--entity_linking_files_path', type=str, nargs='+',
                         default=['./entity_linking_source_files/NCBI.txt', './entity_linking_source_files/BC5CDR.txt', './entity_linking_source_files/st21pv.txt'],
