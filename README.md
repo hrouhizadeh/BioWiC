@@ -1,48 +1,53 @@
+# Extract UMLS information
 
-# BioWiC: An Evaluation Benchmark for Biomedical Concept Representation
+This directory is consist of scripts that preprocess Unified Medical Language System (UMLS) data.
+Note that UMLS raw data are not included in this repository. For downloading UMLS data, follow the instructions available at this [link](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html).
+Once you have obtained the data, ensure that both MRCONSO.RRF and MRREL.RRF are located in the same directory as the scripts in this folder.
+The scripts should be executed sequentially as they may depend on the outputs from preceding scripts.
 
-## Introduction
-In this manuscript, we present the BioWiC benchmark, a new dataset designed to assess how well language models represent biomedical concepts according to their corresponding context.
-BioWiC is formulated as a binary classification task where each instance involves a pair of biomedical terms along with their corresponding sentences. 
-The task is to classify each instance as True if the target terms carry the same meaning across both sentences or False if they do not.
+**Note on Script Outputs**
 
-For further details refer to the preprint version of the [BioWiC paper](https://www.biorxiv.org/content/10.1101/2023.11.08.566170v1).
+By default, the outputs from these scripts will be saved in the `umls_files` directory. 
+If you modify the output file names or the directory, ensure to adjust the arguments accordingly when running BioWiC construction codes in the [biowic_construction](https://github.com/hrouhizadeh/BioWiC/tree/main/BioWiC_construction) directory.
 
 
-## Installation
-Follow these instructions to install the necessary dependencies for the project.
+
+**Constructing UMLS indexing file**
+
+To create an index file containing UMLS information, execute the script below. The output, `umls_synonyms_codes.json`, will be stored as `umls_files` directory.
+   ```bash
+python  umls_preprocess_all_term.py
+   ```
+
+
+**Extracting UMLS synonym CUIs**
+
+For extracting synonymous Concept Unique Identifiers (CUIs) from UMLS, use the following scrip. The resulting file, `umls_synonyms_codes.json`, will be created.
+
+   ```bash
+python extract_synonym_cuis.py 
+   ```
+
+**Mapping MeSH and OMIM to UMLS**
+
+Execute this command to map MeSH and OMIM codes to UMLS. It will generate two files:`mesh_map.json` and `omim_map.json`
+   ```bash
+python extract_umls_mappings_from_mesh_omim.py
+   ```
+
+**Extracting CUI pairs with hypernym-hyponym relationship**
+
+This script extracts CUI pairs where one term is a hypernym of the other. The output file will be saved as `umls_hypernyms.json`.
+   ```bash
+python extract_cui_hypernyms.py 
+   ```
+
+**Extracting all CUIs per concept**
+
+Use this script to compile all possible CUIs for each UMLS concept. This will produce the file `umls_term_cui_indexing.json`. 
+
 ```bash
-git clone https://github.com/hrouhizadeh/BioWiC
-cd BioWiC
-pip install -r requirements.txt
+python extract_all_cuis_per_umls_concept.py  
 ```
 
-## Reconstruct BioWiC 
-To reproduce the construction of BioWiC, you need to perform the following steps:
-1. **Extracting UMLS information**: In the [UMLS](https://github.com/hrouhizadeh/BioWiC/tree/main/UMLS) directory, detailed steps are provided to extract UMLS information needed for the BioWiC dataset development.
-2. **Building BioWiC dataset**:  Follow the instructions in the [BioWiC_construction](https://github.com/hrouhizadeh/BioWiC/tree/main/BioWiC_construction) directory to reconstruct the BioWiC dataset.
-3. **Train and evaluate models**: The [models](https://github.com/hrouhizadeh/BioWiC/tree/main/models) folder contains scripts that enable you to train and test various discriminative and generative large language models using the BioWiC dataset.
 
-Additionally, the official release of the BioWiC dataset is available for direct download in the [data](https://github.com/hrouhizadeh/BioWiC/tree/main/data) folder.
-
-
-<a name="hugging-face"></a>
-## Accessing BioWiC on Hugging Face 🤗
-
-1. **Install the Hugging Face `datasets` Library:**
-   If not already installed, you can add the `datasets` library from Hugging Face.
-   ```bash
-   pip install datasets
-   ```
-
-2. **Load the BioWiC Dataset:**
-   To load the BioWiC dataset, execute the following Python code.
-   ```python
-   from datasets import load_dataset
-
-   dataset = load_dataset("hrouhizadeh/BioWiC")
-   ```
-   This command will automatically download and cache the dataset.
-
-## Contact
-Should you have any inquiries, feel free to contact us at _hossein.rouhizadeh@unige.ch_.
