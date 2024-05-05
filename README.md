@@ -6,7 +6,7 @@ In this manuscript, we present the BioWiC benchmark, a new dataset designed to a
 BioWiC is formulated as a binary classification task where each instance involves a pair of biomedical terms along with their corresponding sentences. 
 The task is to classify each instance as True if the target terms carry the same meaning across both sentences or False if they do not.
 
-For further details refer to the preprint version of the [BioWiC paper](https://www.biorxiv.org/content/10.1101/2023.11.08.566170v1).
+For further details refer to the preprint version of the [BioWiC paper](https://www.nature.com/articles/s41597-024-03317-w).
 
 
 ## Installation
