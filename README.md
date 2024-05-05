@@ -1,5 +1,5 @@
 
-# BioWiC: An Evaluation Benchmark for Biomedical Concept Representation
+# A Dataset for Evaluating Contextualized Representation of Biomedical Concepts in Language Models
 
 ## Introduction
 In this manuscript, we present the BioWiC benchmark, a new dataset designed to assess how well language models represent biomedical concepts according to their corresponding context.
