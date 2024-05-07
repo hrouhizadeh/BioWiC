@@ -44,5 +44,21 @@ Additionally, the official release of the BioWiC dataset is available for direct
    ```
    This command will automatically download and cache the dataset.
 
+## Citaion
+If you use the BioWiC dataset in your research, please cite the following paper:
+   ```bash
+@article{rouhizadeh2024dataset,
+  title={A Dataset for Evaluating Contextualized Representation of Biomedical Concepts in Language Models},
+  author={Rouhizadeh, Hossein and Nikishina, Irina and Yazdani, Anthony and Bornet, Alban and Zhang, Boya and Ehrsam, Julien and Gaudet-Blavignac, Christophe and Naderi, Nona and Teodoro, Douglas},
+  journal={Scientific Data},
+  volume={11},
+  number={1},
+  pages={1--13},
+  year={2024},
+  publisher={Nature Publishing Group}
+}
+```
+
+
 ## Contact
 Should you have any inquiries, feel free to contact us at _hossein.rouhizadeh@unige.ch_.
