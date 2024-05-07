@@ -44,7 +44,7 @@ Additionally, the official release of the BioWiC dataset is available for direct
    ```
    This command will automatically download and cache the dataset.
 
-## Citaion
+## Citation
 If you use the BioWiC dataset in your research, please cite the following paper:
    ```bash
 @article{rouhizadeh2024dataset,
